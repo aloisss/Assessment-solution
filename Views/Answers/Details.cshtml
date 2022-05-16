@@ -1,0 +1,42 @@
+﻿@model Recruitment.Models.Answers
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Answers</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Total_grades)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Total_grades)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Pass)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Pass)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Answer_details)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Answer_details)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ApplicationTest)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ApplicationTest.ApplicationTestId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.AnswersId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

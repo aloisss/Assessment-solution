@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Recruitment.Models.Answers>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Answers</h1>
+
+<h3>
+    <a asp-action="Create">Create New</a>
+</h3>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Total_grades)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pass)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Answer_details)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ApplicationTest)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Total_grades)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Pass)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Answer_details)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ApplicationTest.ApplicationTestId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.AnswersId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.AnswersId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.AnswersId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

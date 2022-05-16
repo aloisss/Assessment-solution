@@ -1,0 +1,53 @@
+﻿@model IEnumerable<Recruitment.Models.application_test>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Application Tests</h1>
+
+<h3>
+    <a asp-action="Create">Create New</a>
+</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Application)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Starting_day)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ending_day)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Test)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Application.ApplicationId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Starting_day)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ending_day)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Test.TestId)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ApplicationTestId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ApplicationTestId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ApplicationTestId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

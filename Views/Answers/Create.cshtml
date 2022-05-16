@@ -1,0 +1,55 @@
+﻿@model Recruitment.Models.Answers
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Answers</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Total_grades" class="control-label"></label>
+                <input asp-for="Total_grades" class="form-control" />
+                <span asp-validation-for="Total_grades" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Pass" class="control-label"></label>
+
+
+                <select id="select1" asp-for="Pass">
+                    <option selected disabled>-- Select Outcome --</option>
+                    <option>Yes</option>
+                    <option>No</option>
+                    
+                </select>
+
+                <span asp-validation-for="Pass" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Answer_details" class="control-label"></label>
+                <input asp-for="Answer_details" class="form-control" />
+                <span asp-validation-for="Answer_details" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ApplicationTestId" class="control-label"></label>
+                <select asp-for="ApplicationTestId" class ="form-control" asp-items="ViewBag.ApplicationTestId"></select>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

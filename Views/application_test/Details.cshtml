@@ -1,0 +1,42 @@
+﻿@model Recruitment.Models.application_test
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>application_test</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Application)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Application.ApplicationId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Starting_day)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Starting_day)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Ending_day)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Ending_day)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Test)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Test.TestId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.ApplicationTestId">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>
